@@ -16,9 +16,11 @@
 # range(-4,6,2)
 # range(5,6)
 
-#for i in range(5):
-    # your code here
-
+# n = 0
+# for i in range(2,9,3):
+#     if (i%2==0):
+#         n+=1
+# print(n)
 
 #############################################
 
@@ -57,11 +59,11 @@
 
 # for w in word:
 #     if w in an_letters:
-#         #print(f'Give me an {c}: {c}') # with f-strings
-#         print("Give me an " + w + ": " + w)
+#         print(f'Give me an {w}: {w}') # with f-strings
+#         # print("Give me an " + w + ": " + w)
 #     else:
-#         #print(f'Give me a {c}: {c}') # with f-strings
-#         print("Give me a " + w + ": " + w)
+#         print(f'Give me a {w}: {w}') # with f-strings
+#         # print("Give me a " + w + ": " + w)
 # print("What does that spell?")
 # for i in range(times):
 #     print(word, "!!!")
@@ -73,8 +75,19 @@
 # s = "abca" Then your code prints 3. 
 
 # your code here
-s = 'abca'
+# s = 'fhewoihfinkwode'
+# letter_num = len(s)
+# for i in range(len(s)):
+#     if s[i] in s[i+1:len(s)]:
+#         letter_num-=1
+# print(letter_num)
 
+
+# seen = ''
+# for char in s:
+#     if char not in seen:
+#         seen = seen + char
+# print(len(seen))
 
 ##############################################
 
@@ -121,8 +134,11 @@ s = 'abca'
 # secret value. If it's not found, it doesn't print anything. 
 
 # your code here
-secret = 4
-
+# secret = 4
+# for i in range(1,11):
+#     if secret == i:
+#         print(i)
+        
 
 ################################################
 
@@ -133,7 +149,14 @@ secret = 4
 # secret value. If it's not found, prints that it didn't find it. 
 
 # your code here   
-secret = 4
+# secret = 15
+# found = False
+# for i in range(1,11):
+#     if secret == i:
+#         print(i)
+#         found = True
+# if not found:
+#     print('secret not found')
 
     
 ####################################################
@@ -281,12 +304,12 @@ secret = 4
 
 #######
 
-#x = 0
-#for i in range(10):
-#    x += 0.1
-#print(x == 1)
-#
-#print(x, '==', 10*0.1)
+# x = 0
+# for i in range(10):
+#     x += 0.1
+# print(x == 1)
+
+# print(x, '==', 10*0.1)
 
 
 
@@ -299,9 +322,13 @@ secret = 4
 # text2 = "revenge of the sixth"
 # Hint, start to write your code with a smaller example, then test it on the above text.
 
-# text1 = "abc"
-# text2 = "cde"
-# your code here
+text1 = "may the fourth be with you"
+text2 = "revenge of the sixth"
+seen = ''
+for char in text1:
+    if char in text2 and char not in seen:
+        seen += char
+print(seen, len(seen))
 
 ####################################################
 ##################### END AT HOME ######################

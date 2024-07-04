@@ -21,10 +21,10 @@
 ###########################################
 
 # Fun Lost Forest code, run it on your own!
-#where = input("You are in the Lost Forest\n****************\n****************\n :)\n****************\n****************\nGo left or right? ")
-#while where.lower() == "right":
-#    where = input("You are in the Lost Forest\n****************\n******       ***\n  (╯°□°）╯\n     ︵ \n    ┻━┻\n****************\n****************\nGo left or right? ")
-#print("\nYou got out of the Lost Forest!\n\o/")
+# where = input("You are in the Lost Forest\n****************\n****************\n :)\n****************\n****************\nGo left or right? ")
+# while where.lower() == "right":
+#     where = input("You are in the Lost Forest\n****************\n******       ***\n  (╯°□°）╯\n     ︵ \n    ┻━┻\n****************\n****************\nGo left or right? ")
+# print("\nYou got out of the Lost Forest!\n\o/")
 
     
 ###########
@@ -50,8 +50,12 @@
 # Expand this code to show a sad face when the user entered 
 # the while loop more than 2 times. Hint: use a counter
 ###################
+# counter = 0
 # where = input("Go left or right? ")
 # while where == "right":
+#     counter=counter+1
+#     if (counter > 2):
+#         print(":(")
 #     where = input("Go left or right? ")
 # print("You got out!")
 
@@ -68,8 +72,8 @@
 #     n = n+1
 
 ## With for loop
-#for n in range(5):
-#    print(n)
+# for n in range(5):
+#     print(n)
 
 ###########
 ## EXAMPLE: factorial
@@ -135,7 +139,7 @@
 # mysum = 0
 # start = 3
 # end = 5
-# for i in range(start, end):
+# for i in range(start, end+1):
 #     mysum += i
 # print(mysum)
 
@@ -153,6 +157,10 @@
 # For ex. if x = 15, it prints 5, 10, and 15. 
 # For ex. if x = 14, it prints 5 and 10.
 
+# x = 14
+# for i in range(1,x+1):
+#     if(i%5==0):
+#         print(i)
 
 # Practice 2:
 # Declare a variable n that stores an int. Print the sum of all digits 
@@ -160,8 +168,15 @@
 # when you divide n by 10.
 # For ex. If x = 1234, print 10
  
-
-
+# x = 12345
+# total = 0
+# n=1
+# while x%10 != 0:
+#     print(x%10)
+#     total += x%10
+#     x = x //10
+#     n+=1
+# print(total)
 
 #########################################################
 ##################### END AT HOME ###########################
@@ -198,10 +213,20 @@
 #         break
 # print(total)
 
+
+# find perfect cube root
+N = 69
+i= 1
+while i**3 < N:
+    i += 1
+if i**3 == N:
+    print(i)
+else:
+    print('error')
+
 #########################################################
 ##################### END ANSWERS AT HOME ###########################
 #########################################################
-
 
 
 

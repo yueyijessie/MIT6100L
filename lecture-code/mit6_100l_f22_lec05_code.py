@@ -111,11 +111,11 @@
 # 1. If you are incrementing from 0 by 0.022, how many increments 
 # can you do before you get a floating point error? 
 
-# x = 0
-# count = 20     # check different numbers here
-# for i in range(count):
-#     x += 0.022 # increment
-#     print(x)      # check this value for floating point error
+x = 0
+count = 10     # check different numbers here
+for i in range(count):
+    x += 0.022 # increment
+    print(x)      # check this value for floating point error
 
 
 # 2. Automate the code from the previous problem. Suppose you are 
@@ -124,7 +124,13 @@
 # until you start to get a floating point error.
 
 # your code here
-
+x = 0.022
+count = 1
+while x == 0.022*count:
+    print(x)
+    x+=0.022
+    count+=1
+print(f'count is {count-1} where {x-0.022} != {0.022*(count-1)}')
 #################################################
 #################################################
 #################################################
@@ -145,7 +151,7 @@
 #     print(x)
 #     x += n
 #     N += 1
-# note that the x and N increments one extra time 
+# # note that the x and N increments one extra time 
 # print(f'count is {N-1} where {x-n} != {n*(N-1)}')
 
 #################################################

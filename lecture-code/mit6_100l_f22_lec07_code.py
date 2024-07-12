@@ -3,13 +3,13 @@
 ###########################
 #A very simple example of a function that has one
 #argument and returns one value
-def is_even(i):   
-    """Assumes: i, a positive int
-    Returns True if i is even, otherwise False"""
-    if i%2 == 0:
-        return True
-    else:
-        return False
+# def is_even(i):   
+#     """Assumes: i, a positive int
+#     Returns True if i is even, otherwise False"""
+#     if i%2 == 0:
+#         return True
+#     else:
+#         return False
 
 # is_even(3) # <- returns False
 # is_even(8) # <- returns True
@@ -25,12 +25,17 @@ def div_by(n, d):
     """ n and d are ints > 0
         Returns True if d divides n evenly and False otherwise 
     """
-    # your code here
+    if n > 0 and d > 0:
+        return n % d == 0
+    else:
+        return "inputs should be positive"
+
 
 
 # For example: 
 # print(div_by(10,3))     # print False
 # print(div_by(195,13))   # returns True
+# print(div_by(-195,13))
 
 ##############################################
 
@@ -48,6 +53,7 @@ def div_by(n, d):
 ###########################
 ### EXAMPLE: sum of all odd numbers between (including) a and b
 ###########################
+
 ## with a for loop
 def sum_odd(a, b):
     sum_of_odds = 0
@@ -81,7 +87,17 @@ def is_palindrome(s):
     """ s is a string
     Returns True if s is a palindrome and False otherwise
     """
-    # your code here
+    str_len = len(s)
+    mid = len(s)//2
+    if mid % 2 == 0:
+        return s[:mid] == s[len(s)-1:mid-1:-1]
+    else:
+        return s[:mid] == s[len(s)-1:mid:-1]
+    
+# print(is_palindrome('222'))
+# print(is_palindrome('2222'))
+# print(is_palindrome('abc'))
+# print(is_palindrome("racecar"))
 
 ################################################
 
@@ -94,7 +110,11 @@ def keep_consonants(word):
         Returns a string containing only the consonants 
         of word in the order they appear
     """
-    # your code here
+    consonants = ''
+    for i in word:
+        if i not in 'aeiou':
+            consonants += i
+    return consonants
 
 # For example
 # print(keep_consonants("abcd"))  # prints bcd
@@ -110,12 +130,19 @@ def first_to_last_diff(s, c):
         occurs and the index where c last occurs. If c does not 
         occur in s, returns -1. 
     """
-    # your code here
+    indexes = ''
+    if c in s:
+        for i in range(len(s)):
+            if s[i] == c:
+                indexes += str(i)
+        return int(indexes[-1])-int(indexes[0])
+    else:
+        return -1
 
 # For example
-# print(first_to_last_diff('aaaa', 'a'))  # prints 3
-# print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
-# print(first_to_last_diff('abcabcabc', 'b'))  # prints -1
+print(first_to_last_diff('aaaa', 'a'))  # prints 3
+print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
+print(first_to_last_diff('abcabcabc', 'd'))  # prints -1
 
 
 ################################################
@@ -147,10 +174,17 @@ def first_to_last_diff(s, c):
 #     Returns True if s is a palindrome and False otherwise
 #     """
 #     # your code here
-#     for i in range(len(s)//2):
-#         if s[i] != s[len(s)-i-1]:
-#             return False
-#     return True        
+    # for i in range(len(s)//2):
+    #     if s[i] != s[len(s)-i-1]:
+    #         return False
+    # return True     
+
+def is_palindrome(s):
+    """ s is a string
+    Returns True if s is a palindrome and False otherwise
+    """
+    return s == s[::-1]      
+   
 
 # s="2222"
 # print(is_palindrome(s))

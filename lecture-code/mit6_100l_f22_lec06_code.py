@@ -7,7 +7,7 @@
 # while abs(guess**2 - x) >= epsilon and guess**2 <= x:
 #     # abs(guess**2 - x) >= epsilon finds a "good enough" answer
 #     # guess**2 <= x ensures we stop looking when the guess becomes unreasonable
-#     guess += increment
+#     guess += increment 
 #     num_guesses += 1
 # print(f'num_guesses = {num_guesses}')
 
@@ -34,7 +34,7 @@
 
 # while abs(guess**2 - x) >= epsilon:
 #     # uncomment to see each step's guess, high, and low 
-#     #print(f'low = {str(low)} high = {str(high)} guess = {str(guess)}')
+#     print(f'low = {str(low)} high = {str(high)} guess = {str(guess)}')
 #     if guess**2 < x:
 #         low = guess
 #     else:
@@ -50,14 +50,14 @@
 # x = 0.5
 # epsilon = 0.01
 # # choose the low endpoint
-# low = ???
+# low = x
 # # choose the high endpopint
-# high = ???
+# high = 1
 
 # guess = (high + low)/2
 
 # while abs(guess**2 - x) >= epsilon:
-#     #print(f'low = {str(low)} high = {str(high)} guess = {str(guess)}')
+#     print(f'low = {str(low)} high = {str(high)} guess = {str(guess)}')
 #     if guess**2 < x:
 #         low = guess
 #     else:
@@ -95,13 +95,22 @@
 # Write code to use bisection search to find the cube 
 # root of positive cubes to within some epsilon
 
-cube = 27
-epsilon = 0.01
-low = 0
-high = cube
+# cube = 27
+# epsilon = 0.01
+# low = 0
+# high = cube
 
-# your code here
+# # your code here
+# guess = (high+low)/2
 
+# while abs(guess**3 - cube) >= epsilon:
+#     print(f'low={str(low)}, high={str(high)}, guess={str(guess)}')
+#     if guess**3 > cube:
+#         high = guess
+#     else:
+#         low = guess
+#     guess = (high+low)/2
+# print(f'{str(guess)} is close to cube root of {str(cube)}')
 
 #####################################################
 
@@ -130,16 +139,17 @@ high = cube
 ########################
 ## EXAMPLE: Newton-Raphson to find roots
 ######################
-# epsilon = 0.01
-# k = 24  # try 54321
-# guess = k/2.0
-# num_guesses = 0
+epsilon = 0.01
+k = 24  # try 54321
+guess = k/2.0 # initial guess
+num_guesses = 0
 
-# while abs(guess*guess - k) >= epsilon:
-#     num_guesses += 1
-#     guess = guess - (((guess**2) - k)/(2*guess))
-# print(f'num_guesses = {str(num_guesses)}')
-# print(f'Square root of {str(k)} is about {str(guess)}')
+while abs(guess*guess - k) >= epsilon:
+    num_guesses += 1
+    print(guess)
+    guess = guess - (((guess**2) - k)/(2*guess))
+print(f'num_guesses = {str(num_guesses)}')
+print(f'Square root of {str(k)} is about {str(guess)}')
 
 
 #################################################################

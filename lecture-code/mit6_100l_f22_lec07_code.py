@@ -140,9 +140,9 @@ def first_to_last_diff(s, c):
         return -1
 
 # For example
-print(first_to_last_diff('aaaa', 'a'))  # prints 3
-print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
-print(first_to_last_diff('abcabcabc', 'd'))  # prints -1
+# print(first_to_last_diff('aaaa', 'a'))  # prints 3
+# print(first_to_last_diff('abcabcabc', 'b'))  # prints 6
+# print(first_to_last_diff('abcabcabc', 'd'))  # prints -1
 
 
 ################################################

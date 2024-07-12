@@ -52,11 +52,11 @@ def is_triangular(n):
         summation of natural numbers (1+2+3+...+k) 
     """
     total = 0
-    for i in range(n):
+    for i in range(n+1):
         total += i
         if total == n:
-            print(True)
-    print(False)
+            return True
+    return False
 
 # # start by runing it on simple test cases
 # print(is_triangular(4))  # print False
@@ -94,9 +94,13 @@ def count_nums_with_sqrt_close_to(n, epsilon):
         epsilon is a positive number < 1
     Returns how many integers have a square root within epsilon of n """
     # your code here
+    nums = 0
+    for i in range(n**3):
+        if abs(n-bisection_root(i)) < epsilon:
+            nums += 1
+    return nums
 
-
-#print(count_nums_with_sqrt_close_to(10, 0.1))
+# print(count_nums_with_sqrt_close_to(10, 0.1))
 
 #############################################################
 
@@ -122,24 +126,24 @@ def f(y):
     x += 1
     print(x)
     
-# # x = 5
-# # f(x)
-# # print(x)
+# x = 5
+# f(x)
+# print(x)
 
 def g(y):
     print(x)
     print(x+1)
     
-# # x = 5
-# # g(x)
-# # print(x)
+# x = 5
+# g(x) #5，6
+# print(x) #5
 
 def h(y):
     x += 1 #leads to an error without line `global x` inside h
 
-# # x = 5
-# # h(x)
-# # print(x)
+# x = 5
+# h(x) 
+# print(x)
 
 
 #############
@@ -189,6 +193,11 @@ def apply(criteria,n):
     (i.e. return True when criteria is applied to them)
     """ 
     # your code here
+    count = 0
+    for i in range(n+1):
+        if criteria(i):
+            count+=1
+    return count
 
 
 def is_even(x):
@@ -196,29 +205,6 @@ def is_even(x):
 
 how_many = apply(is_even,10)
 # print(how_many)
-
-
-
-############## YOU TRY IT ###############
-# Write a function that takes in an int and two functions as 
-# parameters (each takes in an int and returns a float). 
-# It applies both functions to numbers between 0 and n (inclusive) 
-# and returns the maximum value of all outcomes. 
-
-def max_of_both(n, f1, f2):
-    """ n is an int
-        f1 and f2 are functions that take in an int and return a float
-    Applies f1 and f2 on all numbers between 0 and n (inclusive). 
-    Returns the maximum value of all these results.
-    """
-    # your code here
-
-# print(max_of_both(2, lambda x:x-1, lambda x:x+1))  # prints 3
-# print(max_of_both(10, lambda x:x*2, lambda x:x/2))  # prints 20
-
-
-################################
-
 
 
 ###################################
@@ -270,7 +256,7 @@ def is_palindrome(s):
     Returns True if s is a palnidrome and False otherwise. 
     A palindrome is a string that contains the same 
     sequence of characters forward and backward """
-    # your code here
+    return s == s[::-1]   
 
 # For example:
 # print(is_palindrome("222"))   # prints True
@@ -283,7 +269,7 @@ def f_yields_palindrome(n, f):
         f is a function that takes in an int and returns an int
     Returns True if applying f on n returns a number that is a
     palindrome and False otherwise.  """
-    # your code here
+    return is_palindrome(str(f(n)))
 
 
 # For example:
@@ -296,10 +282,10 @@ def g(x):
 def h(x):
     return x//2
 
-# print(f_yields_palindrome(2, f))   # prints True
-# print(f_yields_palindrome(76, f))   # prints True
-# print(f_yields_palindrome(11, g))   # prints True
-# print(f_yields_palindrome(123, h))   # prints False
+print(f_yields_palindrome(2, f))   # prints True
+print(f_yields_palindrome(76, f))   # prints True
+print(f_yields_palindrome(11, g))   # prints True
+print(f_yields_palindrome(123, h))   # prints False
     
 ###################################
 ##################################

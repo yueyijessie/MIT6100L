@@ -47,11 +47,11 @@ my_string = "This"  # example string - modify to test
 my_string = "How many times is the letter e in this string?"
 
 # Insert code below
-count = 0
-for char in my_string:
-    if char == 'e':
-        count+=1
-print(count)
+# count = 0
+# for char in my_string:
+#     if char == 'e':
+#         count+=1
+# print(count)
 
 
 

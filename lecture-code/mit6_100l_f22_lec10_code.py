@@ -11,12 +11,13 @@
 
 ############# YOU TRY IT #####################
 # What is the value of L1, L2, L3, and L after these commands?
-# L1 = ['re']
-# L2 = ['mi']
-# L3 = ['do']
-# L4 = L1 + L2
-# L3.append(L4)
-# L = L2.append(L3)
+L1 = ['re']
+L2 = ['mi']
+L3 = ['do']
+L4 = L1 + L2
+L3.append(L4)
+L = L1.append(L3)
+# print(L1,L2,L3,L4,L)
 
 #################################################
 
@@ -28,10 +29,13 @@ def make_ordered_list(n):
     Returns a list containing all ints in order 
     from 0 to n (inclusive)
     """
-    # your code here
+    L = []
+    for i in range(n+1):
+        L.append(i)
+    return L
 
     
-#print(make_ordered_list(6))  # prints [0, 1, 2, 3, 4, 5, 6]
+# print(make_ordered_list(6))  # prints [0, 1, 2, 3, 4, 5, 6]
 
 #####################################################
 
@@ -43,7 +47,12 @@ def remove_elem(L, e):
     Returns a new list with elements in the same order as L
     but without any elements equal to e. 
     """
-    # your code here
+    newL = []
+    for i in L:
+        if i != e:
+            newL.append(i)
+    return newL
+            
 
   
 # L = [1,2,2,2]
@@ -85,7 +94,7 @@ def count_words(sen):
     """ sen is a string representing a sentence 
     Returns how many words are in sen (i.e. a word is a 
     a sequence of characters between spaces. """
-    # your code here
+    return len(sen.split(' '))
 
 
 # s = "Hello it's me"
@@ -118,6 +127,9 @@ def sort_words(sen):
     Returns a list containing all the words in sen but
     sorted in alphabetical order. """
     # your code here
+    L = list(sen.split(' '))
+    L.sort()
+    return L
 
 
 # s = "look at this photograph"
@@ -135,6 +147,7 @@ def sort_words(sen):
 def square_list(L):
     for i in range(len(L)): 
         L[i] = L[i]**2
+    # return L
 
 # print(square_list([2,3,4]))  # prints None
 
@@ -280,6 +293,8 @@ def sort_words(s):
 # L3.append(['fa', 'la'])
 # What's the value of L3 here?
 
+
+
 ## Question 2
 # L1 = ['bacon', 'eggs']
 # L2 = ['toast', 'jam']
@@ -293,7 +308,9 @@ def apply_to_each(L, f):
     """ L is a list of numbers 
         f is a list that takes in a number and returns a number
     Mutate L such that you apply function f to every element in L """
-    # your code here
+    for i in range(len(L)):
+        L[i] = f(L[i])
+        
 
 # test = [1,-2,3]
 # apply_to_each(test, lambda x: x**2)

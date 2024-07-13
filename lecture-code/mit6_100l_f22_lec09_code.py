@@ -66,7 +66,15 @@ def char_counts(s):
     number of vowels in s and the second value 
     is the number of consonants in s 
     """
-    # your code here
+    # vowel_num = 0
+    # consonants_num = 0
+    (vowel_num, consonants_num) = (0,0)
+    for char in s:
+        if char in 'aeiou':
+            vowel_num+=1
+        else:
+            consonants_num+=1
+    return (vowel_num, consonants_num)
 
 
 # print(char_counts("abcd"))  # prints (1,3)
@@ -137,7 +145,11 @@ def sum_and_prod(L):
     sum of all elements in L and the second value 
     is the product of all elements in L 
     """
-    # your code here
+    (total, prod)= (0,1)
+    for i in L:
+        total+=i
+        prod*=i
+    return (total, prod)
 
  
 
@@ -197,7 +209,7 @@ def always_sunny(t1, t2):
     first = t1[0] + t2[0]
     return (sun[0], first)
 
-# always_sunny(('cloudy' ), ('cold',))  # returns what?
+# print(always_sunny(('cloudy' ), ('cold',)))  # returns what?
 
 
 
@@ -207,7 +219,10 @@ def max_of_both(n, f1, f2):
     Applies f1 and f2 on all numbers between 0 and n (inclusive). 
     Returns the maximum value of all these results.
     """
-    # your code here
+    t = ()
+    for i in range(n+1):
+        t+=(f1(i),f2(i))
+    return max(t)
 
 # print(max_of_both(2, lambda x:x-1, lambda x:x+1))  # prints 3
 # print(max_of_both(10, lambda x:x*2, lambda x:x/2))  # prints 20
@@ -216,9 +231,13 @@ def max_of_both(n, f1, f2):
 def sublist_sum(L):
     """ L is a list whose elements are lists with int elements
     Returns the sum of all int elements. """
-    # your code here
+    t = ()
+    for li in L:
+        for l in li:
+            t+=(l,)
+    return sum(t)
 
-# print(sublist_sum([[1,2], [4,5,6]])) # prints 18
+print(sublist_sum([[1,2], [4,5,6]])) # prints 18
 
 
 #############################################
